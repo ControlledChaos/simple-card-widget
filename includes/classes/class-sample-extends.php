@@ -6,13 +6,13 @@
  *
  * @see `includes/classes/README.md`;
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Classes
  * @category   General
  * @since      1.0.0
  */
 
-namespace BS_Plugin\Classes;
+namespace Simple_Card_Widget\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -109,13 +109,13 @@ class Sample_Extends extends Sample {
  * Delete this function if not needed.
  *
  * @example Call a method from the namespaced class:
- *          `Classes\bs_sample_extends_class()->sample_method();`
+ *          `Classes\scw_sample_extends_class()->sample_method();`
  *
  * @since  1.0.0
  * @access public
  * @return object Returns an instance of the class.
  */
-function bs_sample_extends_class() {
+function scw_sample_extends_class() {
 	return Sample_Extends :: instance();
 }
 
@@ -124,4 +124,4 @@ function bs_sample_extends_class() {
  *
  * Uncomment to use.
  */
-// bs_sample_extends_class();
+// scw_sample_extends_class();

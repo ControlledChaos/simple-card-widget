@@ -2,16 +2,16 @@
 /**
  * Initialize plugin functionality
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Init
  * @category   Core
  * @since      1.0.0
  */
 
-namespace BS_Plugin;
+namespace Simple_Card_Widget;
 
 // Alias namespaces.
-use BS_Plugin\Classes as Classes;
+use Simple_Card_Widget\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,15 +37,15 @@ function init() {
 
 	// Standard plugin installation.
 	load_plugin_textdomain(
-		'bs-plugin',
+		'simple-card-widget',
 		false,
-		dirname( BS_BASENAME ) . '/languages'
+		dirname( SCW_BASENAME ) . '/languages'
 	);
 
 	// If this is in the must-use plugins directory.
 	load_muplugin_textdomain(
-		'bs-plugin',
-		dirname( BS_BASENAME ) . '/languages'
+		'simple-card-widget',
+		dirname( SCW_BASENAME ) . '/languages'
 	);
 
 	/**
@@ -54,7 +54,7 @@ function init() {
 	 * The autoloader registers plugin classes for later use,
 	 * such as running new instances below.
 	 */
-	require_once BS_PATH . 'includes/autoloader.php';
+	require_once SCW_PATH . 'includes/autoloader.php';
 }
 
 /**

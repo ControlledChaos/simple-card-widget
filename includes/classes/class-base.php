@@ -8,13 +8,13 @@
  *
  * @see `includes/classes/README.md`;
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Classes
  * @category   General
  * @since      1.0.0
  */
 
-namespace BS_Plugin\Classes;
+namespace Simple_Card_Widget\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

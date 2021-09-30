@@ -11,16 +11,16 @@
  * in a settings file is to prevent site administrators wrongly
  * or incorrectly configuring the site built by developers.
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Configuration
  * @category   Core
  * @since      1.0.0
  */
 
-namespace BS_Plugin;
+namespace Simple_Card_Widget;
 
 // Alias namespaces.
-use BS_Plugin\Classes as Classes;
+use Simple_Card_Widget\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +33,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The latest plugin version.
  */
-define( 'BS_VERSION', '1.0.0' );
+define( 'SCW_VERSION', '1.0.0' );
 
 /**
  * Plugin name
@@ -41,8 +41,8 @@ define( 'BS_VERSION', '1.0.0' );
  * @since 1.0.0
  * @var   string The name of the plugin.
  */
-if ( ! defined( 'BS_NAME' ) ) {
-	define( 'BS_NAME', __( 'BS Plugin', 'bs-plugin' ) );
+if ( ! defined( 'SCW_NAME' ) ) {
+	define( 'SCW_NAME', __( 'Simple Card Widget', 'simple-card-widget' ) );
 }
 
 /**
@@ -52,7 +52,7 @@ if ( ! defined( 'BS_NAME' ) ) {
  * @var   string The filesystem directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'BS_PATH', plugin_dir_path( __FILE__ ) );
+define( 'SCW_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Constant: Plugin folder URL
@@ -61,7 +61,7 @@ define( 'BS_PATH', plugin_dir_path( __FILE__ ) );
  * @var   string The URL directory path (with trailing slash)
  *               for the plugin __FILE__ passed in.
  */
-define( 'BS_URL', plugin_dir_url(__FILE__ ) );
+define( 'SCW_URL', plugin_dir_url(__FILE__ ) );
 
 /**
  * PHP version check
@@ -73,7 +73,7 @@ define( 'BS_URL', plugin_dir_url(__FILE__ ) );
  * @since  1.0.0
  * @return void
  */
-if ( ! Classes\bs_php()->version() ) {
+if ( ! Classes\scw_php()->version() ) {
 	return;
 }
 
@@ -83,9 +83,9 @@ if ( ! Classes\bs_php()->version() ) {
  * @since 1.0.0
  * @var   array Plugin identification, support, settings.
  */
-if ( ! defined( 'BS_CONFIG' ) ) {
+if ( ! defined( 'SCW_CONFIG' ) ) {
 
-	define( 'BS_CONFIG', [
+	define( 'SCW_CONFIG', [
 
 		/**
 		 * Plugin version
@@ -93,7 +93,7 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The latest plugin version.
 		 */
-		'version' => BS_VERSION,
+		'version' => SCW_VERSION,
 
 		/**
 		 * Required PHP version
@@ -101,7 +101,7 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The minimum required PHP version.
 		 */
-		'php_version' => Classes\bs_php()->minimum(),
+		'php_version' => Classes\scw_php()->minimum(),
 
 		/**
 		 * Plugin name
@@ -111,7 +111,7 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the plugin.
 		 */
-		'name' => BS_NAME,
+		'name' => SCW_NAME,
 
 		/**
 		 * Developer name
@@ -119,7 +119,7 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The name of the developer/agency.
 		 */
-		'dev_name' => __( 'Controlled Chaos', 'bs-plugin' ),
+		'dev_name' => __( 'Controlled Chaos', 'simple-card-widget' ),
 
 		/**
 		 * Developer URL
@@ -143,7 +143,7 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * @since 1.0.0
 		 * @var   string The URL of the plugin.
 		 */
-		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/BS_Plugin' ),
+		'plugin_url' => esc_url( 'https://github.com/ControlledChaos/Simple_Card_Widget' ),
 
 		/**
 		 * Universal slug
@@ -151,13 +151,13 @@ if ( ! defined( 'BS_CONFIG' ) ) {
 		 * This URL slug is used for various plugin admin & settings pages.
 		 *
 		 * The prefix will change in your search & replace in renaming the plugin.
-		 * Change the second part of the define(), here as 'bs-plugin',
+		 * Change the second part of the define(), here as 'simple-card-widget',
 		 * to your preferred page slug.
 		 *
 		 * @since 1.0.0
 		 * @var   string The URL slug of the admin pages.
 		 */
-		'admin_slug' => 'bs-plugin',
+		'admin_slug' => 'simple-card-widget',
 
 		/**
 		 * Allow Site Health
@@ -199,8 +199,8 @@ if ( ! defined( 'BS_CONFIG' ) ) {
  * @since 1.0.0
  * @var   string The name of the developer/agency.
  */
-if ( ! defined( 'BS_DEV_NAME' ) ) {
-	define( 'BS_DEV_NAME', BS_CONFIG['dev_name'] );
+if ( ! defined( 'SCW_DEV_NAME' ) ) {
+	define( 'SCW_DEV_NAME', SCW_CONFIG['dev_name'] );
 }
 
 /**
@@ -209,8 +209,8 @@ if ( ! defined( 'BS_DEV_NAME' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'BS_DEV_URL' ) ) {
-	define( 'BS_DEV_URL', BS_CONFIG['dev_url'] );
+if ( ! defined( 'SCW_DEV_URL' ) ) {
+	define( 'SCW_DEV_URL', SCW_CONFIG['dev_url'] );
 }
 
 /**
@@ -219,8 +219,8 @@ if ( ! defined( 'BS_DEV_URL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the developer/agency.
  */
-if ( ! defined( 'BS_DEV_EMAIL' ) ) {
-	define( 'BS_DEV_EMAIL', BS_CONFIG['dev_email'] );
+if ( ! defined( 'SCW_DEV_EMAIL' ) ) {
+	define( 'SCW_DEV_EMAIL', SCW_CONFIG['dev_email'] );
 }
 
 /**
@@ -229,8 +229,8 @@ if ( ! defined( 'BS_DEV_EMAIL' ) ) {
  * @since 1.0.0
  * @var   string The URL of the plugin.
  */
-if ( ! defined( 'BS_PLUGIN_URL' ) ) {
-	define( 'BS_PLUGIN_URL', BS_CONFIG['plugin_url'] );
+if ( ! defined( 'SCW_PLUGIN_URL' ) ) {
+	define( 'SCW_PLUGIN_URL', SCW_CONFIG['plugin_url'] );
 }
 
 /**
@@ -239,8 +239,8 @@ if ( ! defined( 'BS_PLUGIN_URL' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Site Health feature.
  */
-if ( ! defined( 'BS_ALLOW_SITE_HEALTH' ) ) {
-	define( 'BS_ALLOW_SITE_HEALTH', BS_CONFIG['site_health'] );
+if ( ! defined( 'SCW_ALLOW_SITE_HEALTH' ) ) {
+	define( 'SCW_ALLOW_SITE_HEALTH', SCW_CONFIG['site_health'] );
 }
 
 /**
@@ -249,8 +249,8 @@ if ( ! defined( 'BS_ALLOW_SITE_HEALTH' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the links manager feature.
  */
-if ( ! defined( 'BS_ALLOW_LINKS_MANAGER' ) ) {
-	define( 'BS_ALLOW_LINKS_MANAGER', BS_CONFIG['links_manager'] );
+if ( ! defined( 'SCW_ALLOW_LINKS_MANAGER' ) ) {
+	define( 'SCW_ALLOW_LINKS_MANAGER', SCW_CONFIG['links_manager'] );
 }
 
 /**
@@ -259,8 +259,8 @@ if ( ! defined( 'BS_ALLOW_LINKS_MANAGER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow the Customizer.
  */
-if ( ! defined( 'BS_ALLOW_CUSTOMIZER' ) ) {
-	define( 'BS_ALLOW_CUSTOMIZER', BS_CONFIG['customizer'] );
+if ( ! defined( 'SCW_ALLOW_CUSTOMIZER' ) ) {
+	define( 'SCW_ALLOW_CUSTOMIZER', SCW_CONFIG['customizer'] );
 }
 
 /**
@@ -269,6 +269,6 @@ if ( ! defined( 'BS_ALLOW_CUSTOMIZER' ) ) {
  * @since 1.0.0
  * @var   boolean Whether to allow admin color pickers.
  */
-if ( ! defined( 'BS_ALLOW_ADMIN_COLOR_PICKER' ) ) {
-	define( 'BS_ALLOW_ADMIN_COLOR_PICKER', BS_CONFIG['color_picker'] );
+if ( ! defined( 'SCW_ALLOW_ADMIN_COLOR_PICKER' ) ) {
+	define( 'SCW_ALLOW_ADMIN_COLOR_PICKER', SCW_CONFIG['color_picker'] );
 }

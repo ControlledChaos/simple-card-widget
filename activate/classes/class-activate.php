@@ -7,16 +7,16 @@
  * more elegant than the native `die()` screen
  * proveded by the management system.
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Classes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace BS_Plugin\Classes\Activate;
+namespace Simple_Card_Widget\Classes\Activate;
 
 // Alias namespaces.
-use BS_Plugin\Classes as Classes;
+use Simple_Card_Widget\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,10 +35,10 @@ class Activate {
 	public function __construct() {
 
 		// Add notice(s) if the PHP version is insufficient.
-		if ( ! Classes\bs_php()->version() ) {
+		if ( ! Classes\scw_php()->version() ) {
 
 			// Add notice to plugin row.
-			add_action( 'after_plugin_row_' . BS_BASENAME, [ $this, 'php_deactivate_notice_row' ], 5, 3 );
+			add_action( 'after_plugin_row_' . SCW_BASENAME, [ $this, 'php_deactivate_notice_row' ], 5, 3 );
 
 			// Add notice to admin header, uncomment to implement.
 			// add_action( 'admin_notices', [ $this, 'php_deactivate_notice_header' ] );
@@ -81,34 +81,34 @@ class Activate {
 
 		?>
 		<style>
-			.plugins tr[data-plugin='<?php echo BS_BASENAME; ?>'] th,
-			.plugins tr[data-plugin='<?php echo BS_BASENAME; ?>'] td {
+			.plugins tr[data-plugin='<?php echo SCW_BASENAME; ?>'] th,
+			.plugins tr[data-plugin='<?php echo SCW_BASENAME; ?>'] td {
 				box-shadow: none;
 			}
 
 			<?php if ( isset( $plugin_data['update'] ) && ! empty( $plugin_data['update'] ) ) : ?>
 
-				.plugins tr.<?php echo 'bs-plugin'; ?>-plugin-tr td {
+				.plugins tr.<?php echo 'simple-card-widget'; ?>-plugin-tr td {
 					box-shadow: none ! important;
 				}
 
-				.plugins tr.<?php echo 'bs-plugin'; ?>-plugin-tr .update-message {
+				.plugins tr.<?php echo 'simple-card-widget'; ?>-plugin-tr .update-message {
 					margin-bottom: 0;
 				}
 
 			<?php endif; ?>
 		</style>
 
-		<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'bs-plugin'; ?>-plugin-tr">
+		<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'simple-card-widget'; ?>-plugin-tr">
 			<td colspan="<?php echo $colspan; ?>" class="plugin-update colspanchange">
 				<div class="update-message notice inline notice-error notice-alt">
 					<?php echo sprintf(
 						'<p>%s %s %s %s %s %s</p>',
-						__( 'Functionality of the', 'bs-plugin' ),
-						BS_NAME,
-						__( 'plugin has been disabled because it requires PHP version', 'bs-plugin' ),
-						Classes\bs_php()->minimum(),
-						__( 'or greater. Your system is running PHP version', 'bs-plugin' ),
+						__( 'Functionality of the', 'simple-card-widget' ),
+						SCW_NAME,
+						__( 'plugin has been disabled because it requires PHP version', 'simple-card-widget' ),
+						Classes\scw_php()->minimum(),
+						__( 'or greater. Your system is running PHP version', 'simple-card-widget' ),
 						phpversion()
 					); ?>
 				</div>
@@ -130,11 +130,11 @@ class Activate {
 		<div id="plugin-php-notice" class="notice notice-error is-dismissible">
 			<?php echo sprintf(
 				'<p>%s %s %s %s %s %s</p>',
-				__( 'Functionality of the', 'bs-plugin' ),
-				BS_NAME,
-				__( 'plugin has been disabled because it requires PHP version', 'bs-plugin' ),
-				bs_php()->minimum(),
-				__( 'or greater. Your system is running PHP version', 'bs-plugin' ),
+				__( 'Functionality of the', 'simple-card-widget' ),
+				SCW_NAME,
+				__( 'plugin has been disabled because it requires PHP version', 'simple-card-widget' ),
+				scw_php()->minimum(),
+				__( 'or greater. Your system is running PHP version', 'simple-card-widget' ),
 				phpversion()
 			); ?>
 		</div>

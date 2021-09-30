@@ -4,13 +4,13 @@
  *
  * The autoloader registers plugin classes for later use.
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Includes
  * @category   Classes
  * @since      1.0.0
  */
 
-namespace BS_Plugin;
+namespace Simple_Card_Widget;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,16 +25,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   array Defines an array of class file paths.
  */
-define( 'BS_CLASS', [
-	'core'     => BS_PATH . 'includes/classes/core/class-',
-	'settings' => BS_PATH . 'includes/classes/settings/class-',
-	'tools'    => BS_PATH . 'includes/classes/tools/class-',
-	'media'    => BS_PATH . 'includes/classes/media/class-',
-	'users'    => BS_PATH . 'includes/classes/users/class-',
-	'vendor'   => BS_PATH . 'includes/classes/vendor/class-',
-	'admin'    => BS_PATH . 'includes/classes/backend/class-',
-	'front'    => BS_PATH . 'includes/classes/frontend/class-',
-	'general'  => BS_PATH . 'includes/classes/class-',
+define( 'SCW_CLASS', [
+	'core'     => SCW_PATH . 'includes/classes/core/class-',
+	'settings' => SCW_PATH . 'includes/classes/settings/class-',
+	'tools'    => SCW_PATH . 'includes/classes/tools/class-',
+	'media'    => SCW_PATH . 'includes/classes/media/class-',
+	'users'    => SCW_PATH . 'includes/classes/users/class-',
+	'vendor'   => SCW_PATH . 'includes/classes/vendor/class-',
+	'admin'    => SCW_PATH . 'includes/classes/backend/class-',
+	'front'    => SCW_PATH . 'includes/classes/frontend/class-',
+	'general'  => SCW_PATH . 'includes/classes/class-',
 ] );
 
 /**
@@ -47,37 +47,37 @@ define( 'BS_CLASS', [
  * @since 1.0.0
  * @var   array Defines an array of class files to register.
  */
-define( 'BS_CLASSES', [
+define( 'SCW_CLASSES', [
 
 	// Base class.
-	'BS_Plugin\Classes\Base' => BS_CLASS['general'] . 'base.php',
+	'Simple_Card_Widget\Classes\Base' => SCW_CLASS['general'] . 'base.php',
 
 	// Core classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['core'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['core'] . 'file.php',
 
 	// Settings classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['settings'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['settings'] . 'file.php',
 
 	// Tools classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['tools'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['tools'] . 'file.php',
 
 	// Media classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['media'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['media'] . 'file.php',
 
 	// Users classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['users'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['users'] . 'file.php',
 
 	// Vendor classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['vendor'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['vendor'] . 'file.php',
 
 	// Backend/admin classes,
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['admin'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['admin'] . 'file.php',
 
 	// Frontend classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['front'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['front'] . 'file.php',
 
 	// General/miscellaneos classes.
-	// 'BS_Plugin\Classes\Class' => BS_CLASS['general'] . 'file.php',
+	// 'Simple_Card_Widget\Classes\Class' => SCW_CLASS['general'] . 'file.php',
 
 ] );
 
@@ -90,8 +90,8 @@ define( 'BS_CLASSES', [
  */
 spl_autoload_register(
 	function ( string $class ) {
-		if ( isset( BS_CLASSES[ $class ] ) ) {
-			require BS_CLASSES[ $class ];
+		if ( isset( SCW_CLASSES[ $class ] ) ) {
+			require SCW_CLASSES[ $class ];
 		}
 	}
 );

@@ -6,13 +6,13 @@
  * on the plugin's server, notably disable functionality
  * if the minimum version is not met.
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace BS_Plugin\Classes;
+namespace Simple_Card_Widget\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -79,6 +79,6 @@ final class PHP_Version {
  * @access public
  * @return object PHP_Version Returns an instance of the class.
  */
-function bs_php() {
+function scw_php() {
 	return PHP_Version :: instance();
 }

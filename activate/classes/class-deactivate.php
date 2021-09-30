@@ -2,13 +2,13 @@
 /**
  * Plugin deactivation class
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @subpackage Classes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace BS_Plugin\Classes\Activate;
+namespace Simple_Card_Widget\Classes\Activate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,7 +2,7 @@
 /**
  * Fired when the plugin is uninstalled
  *
- * @package    BS_Plugin
+ * @package    Simple_Card_Widget
  * @since      1.0.0
  */
 
